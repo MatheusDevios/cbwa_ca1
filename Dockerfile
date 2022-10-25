@@ -17,3 +17,8 @@ COPY .config .
 RUN make && make install
 # Create a non-root user to own the files and run our server
 RUN adduser -D static
+
+# Switch to the scratch image
+FROM scratch
+
+EXPOSE 8080
