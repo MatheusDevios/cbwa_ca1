@@ -1,0 +1,13 @@
+table, th, td {
+    border: 2px solid;
+    margin: 5px;
+    padding: 3px;
+}
+td, th {
+    padding: 10px;
+    text-align: center;
+}
+.key {
+    height: 16px;
+    width: 16px;
+}
