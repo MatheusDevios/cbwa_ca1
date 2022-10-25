@@ -21,4 +21,15 @@ RUN adduser -D static
 # Switch to the scratch image
 FROM scratch
 
+# exposed port 8080
 EXPOSE 8080
+
+# Copy over the user
+COPY --from=builder /etc/passwd /etc/passwd
+
+# Copy the busybox static binary
+COPY --from=builder /busybox/_install/bin/busybox /
+
+# Use our non-root user
+USER static
+WORKDIR /home/static
