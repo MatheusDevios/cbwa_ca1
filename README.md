@@ -4,6 +4,10 @@ CA1 of Cloud Based Web Application.
 Name: Matheus Costa Diniz
 Student number: 2022042
 
+## Download
+
+First download the repository to be able to proceed with it.
+
 ## Usage
 
 Build the image:
