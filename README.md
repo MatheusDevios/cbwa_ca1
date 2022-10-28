@@ -24,18 +24,25 @@ docker run -it --rm -p 8080:8080 cbwa-ca1-matheus-diniz
 
 Browse to `http://localhost:8080`.
 
-To be able to run the CA project `./index.html` was added to the `CMD` line:
+**NOTE:** To be able to run the CA project was added those following line to dockerfile:
 
 ```dockerfile
+# Copying the content of Web CA1 to the scratch image
+COPY --from=builder /home/static /home/static
 
-# Copy all your static files from the html folder.
-COPY html .
-
-# Added ./index.html to the `CMD` line
-CMD ["/busybox", "httpd", "-f", "-v", "-p", "8080", "-c", "httpd.conf", "./index.html]
+## Changing working directory to /home/static/web_ca1-main
+WORKDIR /home/static/webdev_ca1-main
 ```
 
-## httpd.conf changes
+## After the container runs, it executes busybox, httpd and so on.
+
+```dockerfile
+CMD ["/busybox", "httpd", "-f", "-v", "-p", "8080", "-c", "httpd.conf"]
+```
+
+**NOTE:** .dockerignore and .gitignore files are added in order no to add some files to the container when runing and to the git repository respectively.
+
+## httpd.conf changes if nedded to allow or deny id/rules for the container
 
 Add to `httpd.conf` file and use the `P` directive:
 

@@ -38,7 +38,6 @@ COPY --from=builder /home/static /home/static
 
 # Switching to our non-root user and their working directory
 USER static
-# WORKDIR /home/static
 ## Changing working directory to /home/static/web_ca1-main
 WORKDIR /home/static/webdev_ca1-main
 
