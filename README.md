@@ -24,7 +24,7 @@ docker run -it --rm -p 8080:8080 cbwa-ca1-matheus-diniz
 
 Browse to `http://localhost:8080`.
 
-**NOTE:** To be able to run the CA project was added those following line to dockerfile:
+**NOTE:** To be able to run the CA project direclty form GitHub was added the following lines:
 
 ```dockerfile
 # Copying the content of Web CA1 to the scratch image
